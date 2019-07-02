@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Advanced CSS Selectors</title>
+    <link rel="stylesheet" href="css/master.css" />
+</head>
+
+<body>
+    <main>
+        <h1>Advanced CSS Selectors</h1>
+        <section class="basics">
+            <h2>Basics</h2>
+            <p>Element Selector - <code>p</code></p>
+            <p>Class Selector - <code>.class</code></p>
+            <p>Id Selector - <code>#id</code></p>
+        </section>
+
+        <section class="universal">
+            <h2><span>*</span> Universal</h2>
+            <p>
+                This selects EVERYTHING. Every single thing<br /> (except ::before and ::after...).
+            </p>
+            <p>
+                Good for general resetting. For apply universal selector to pseudo-classes add <code>*::before</code>, <code>*::after</code>
+            </p>
+            <ul>
+                <li>Every</li>
+                <li>Single</li>
+                <li>Thing</li>
+                <li><a href="#">Everything</a></li>
+            </ul>
+            <code>Yup, even this, and, well, everything else too.</code>
+        </section>
+        <section class="direct_children">
+            <h2><span>></span> Direct Children</h2>
+            <p>You can create selectors like this:</p>
+            <code>.direct-children p</code>
+            <p>That will select all paragraphs inside of .direct-children</p>
+            <div class="example">
+                <p>
+                    But <code>.direct-child > p</code> will not select this paragraph. Because it's a grandchild to original element (original one has inside another element which has paragraph on its own). It will select only it's direct children.
+                </p>
+            </div>
+        </section>
+        <section class="adjacent_sibling">
+            <h2><span>+</span>Adjacent Sibling</h2>
+            <p>
+                Basically it looks for same level elements next to it and takes over properties.
+            </p>
+            <p>
+                In this example starting from the left, there is nothing left to the first box, so it keeps its base properties. The second one has similar element before it so it takes up the new properties
+            </p>
+            <p>
+                This can be useful when setting margin or padding to same group of elements
+            </p>
+            <div class="box"></div>
+            <div class="box"></div>
+            <a href="">Hello</a>
+            <div class="box"></div>
+            <div class="box"></div>
+        </section>
+
+        <section class="general_sibling">
+            <h2><span>~</span>General Sibling</h2>
+            <p>
+                General sibling works pretty much same way the adjacent sibling does, but the difference is that it the previous element doesn't has to be the same. It can be totally different.
+            </p>
+            <p>What matters is that somewhere in the code there is</p>
+            <div class="box"></div>
+            <div class="box"></div>
+            <a href="">Hello</a>
+            <div class="box"></div>
+            <div class="box"></div>
+        </section>
+        <section class="attribute">
+            <h2><span>[]</span>Attribute</h2>
+            <a href="https://www.google.com" class="link-one">Google</a>
+            <a href="https://www.google.ca" class="link-two">Google Canada</a>
+            <a href="about.html" class="link-three">About page</a>
+            <a href="http://awesomesocialnetwork.com" class="link-four" target="_blank">Socialize</a
+        >
+        <a href="ebook.pdf" class="link-five">PDF file</a>
+            <a href="#" class="another-link">Yet another link</a>
+        </section>
+    </main>
+</body>
+
+</html>
